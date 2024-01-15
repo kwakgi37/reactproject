@@ -1,0 +1,19 @@
+{
+  "words": [
+    {
+      "number": 1,
+      "author": "Udell",
+      "title": "Honorable",
+      "date": "2023-12-21"
+    },
+    {
+      "number": 2,
+      "author": "Nancey",
+      "title": "Honorable",
+      "date": "2023-03-18"
+    },
+    { "number": 3, "author": "Juliana", "title": "Ms", "date": "2023-11-30" },
+    { "number": 4, "author": "Andros", "title": "Rev", "date": "2023-05-14" },
+    { "number": 5, "author": "Dollie", "title": "Ms", "date": "2023-01-19" }
+  ]
+}

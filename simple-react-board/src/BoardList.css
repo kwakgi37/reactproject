@@ -1,0 +1,105 @@
+h1 {
+  text-align: center;
+}
+#menu {
+  height: 30px;
+  width: auto;
+}
+#menu button {
+  list-style: none;
+  color: white;
+  background-color: white;
+  float: inline-start;
+  line-height: 40px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#menu .search {
+  float: right;
+}
+#menu .menulink {
+  text-decoration: underline;
+  color: black;
+  display: block;
+  width: 100px;
+  font-size: 16px;
+  font-weight: bold;
+}
+#menu .menulink:hover {
+  color: antiquewhite;
+  background-color: white;
+}
+
+.search-box {
+  height: 45px;
+  width: auto;
+  background: white;
+  border-radius: 40px;
+  padding: 10px;
+  border: 1px solid;
+}
+
+.search-txt {
+  border: none;
+  background: white;
+  outline: black;
+  float: left;
+  padding: 0px;
+  font-size: 16px;
+  line-height: 30px;
+  width: 200px;
+}
+
+.search-btn {
+  float: right;
+  width: 40px;
+  height: auto;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#button-area {
+  height: 30px;
+  width: auto;
+  text-align: center;
+}
+
+#button-area .button {
+  list-style: none;
+  color: white;
+  background-color: white;
+  float: inline-start;
+  line-height: 40px;
+  vertical-align: middle;
+  text-align: center;
+  margin: 5px;
+}
+
+#button-area .btn {
+  margin: 5px;
+}
+
+li {
+  list-style: none;
+  text-align: auto;
+}
+
+.dropdown-btn {
+  width: 15%;
+  background-color: white;
+  font: bold;
+}
+
+.table-head {
+  text-align: center;
+}
+
+.chbox {
+  text-align: center;
+}

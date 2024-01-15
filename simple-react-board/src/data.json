@@ -1,0 +1,13 @@
+{
+  "words": [
+    {
+      "number": 1,
+      "author": "Jannel",
+      "title": "Honorable",
+      "date": "2023-02-26"
+    },
+    { "number": 2, "author": "Nita", "title": "Rev", "date": "2023-09-01" },
+    { "number": 3, "author": "Izak", "title": "Ms", "date": "2023-12-08" },
+    { "number": 4, "author": "Everard", "title": "Ms", "date": "2023-04-30" }
+  ]
+}

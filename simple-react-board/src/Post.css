@@ -1,0 +1,45 @@
+h1 {
+  text-align: center;
+}
+
+.text1 {
+  padding-left: 25%;
+}
+
+#title .title-box {
+  text-align: center;
+}
+#title .title-txt {
+  width: 50%;
+  height: 30px;
+  border: 1px solid burlywood;
+}
+
+#author .author-box {
+  text-align: center;
+}
+
+#author .author-txt {
+  width: 50%;
+  height: 30px;
+  border: 1px solid burlywood;
+}
+
+#detail .detail-box {
+  text-align: center;
+}
+#detail .detail-txt {
+  width: 50%;
+  height: 300px;
+  border: 1px solid burlywood;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button-box {
+  margin-right: 10px;
+}
