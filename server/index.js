@@ -19,6 +19,7 @@ let corsOptions = {
 app.use(cors(corsOptions));
 
 app.get('/', (req, res) => {
+  console.log('success');
   const sqlQuery = 'INSERT INTO requested (rowno) VALUES (1)';
   db.query(sqlQuery, (err, result) => {
     res.send('success!');

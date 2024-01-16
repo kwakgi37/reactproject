@@ -1,3 +1,4 @@
+//QNA 화면
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import './BoardList.css';

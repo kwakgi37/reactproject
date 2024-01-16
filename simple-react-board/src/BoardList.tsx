@@ -1,18 +1,39 @@
-//메인 화면, 공지사항 화면
+//메인 화면, 안내 화면
 import React, { useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import './BoardList.css';
 import { Link } from 'react-router-dom';
-import { CSSTransition } from 'react-transition-group';
 import dummy from './data.json';
 
-const BoardList = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface Category {
+  name: string;
+}
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+interface Record {
+  number: number;
+  author: string;
+  title: string;
+  date: string;
+}
+
+const BoardList: React.FC = () => {
+  const category: Category[] = [
+    { name: '공지' },
+    { name: '안내' },
+    { name: '이벤트' },
+    { name: '기타' },
+  ];
+
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const recordsPerPage: number = 10;
+  const firstIndex: number = (currentPage - 1) * recordsPerPage;
+  const lastIndex: number = firstIndex + recordsPerPage;
+  const records: { words: Record[] } = {
+    words: dummy.words.slice(firstIndex, lastIndex),
   };
+  const npage: number = Math.ceil(dummy.words.length / recordsPerPage);
+  const numbers: number[] = [...Array(npage + 1).keys()].slice(1);
 
   return (
     <div>
@@ -43,6 +64,16 @@ const BoardList = () => {
             <input type="submit" value="검색" className="search-btn" />
           </form>
         </div>
+        <div className="select-form">
+          <select className="form-control">
+            <option>구분 ▼</option>
+            {category.map((ctr, index) => (
+              <option key={index} value={ctr.name}>
+                {ctr.name}
+              </option>
+            ))}
+          </select>
+        </div>
       </nav>
       <div>
         <Table striped bordered hover>
@@ -56,8 +87,8 @@ const BoardList = () => {
             </tr>
           </thead>
           <tbody>
-            {dummy.words.map((word) => (
-              <tr>
+            {records.words.map((word, index) => (
+              <tr key={index}>
                 <td className="chbox">
                   <input type="checkbox"></input>
                 </td>
@@ -86,26 +117,53 @@ const BoardList = () => {
         </div>
       </nav>
       <br />
-      <div className="dropdown-box">
-        <button className="dropdown-btn" onClick={toggleDropdown}>
-          구분 ▽
-        </button>
-        <CSSTransition
-          in={isOpen}
-          timeout={300}
-          classNames="dropdown"
-          unmountOnExit
+      <div className="pagination-box">
+        <Button
+          className="page-item"
+          onClick={prePage}
+          variant="white"
+          disabled={currentPage === 1}
         >
-          <ul>
-            <li>공지</li>
-            <li>안내</li>
-            <li>이벤트</li>
-            <li>기타</li>
-          </ul>
-        </CSSTransition>
+          ◀
+        </Button>
+        {numbers.map((n, i) => (
+          <Button
+            className={`page-item ${currentPage === n ? 'active' : ''}`}
+            key={i}
+            onClick={() => changeCPage(n)}
+            variant="white"
+          >
+            {n}
+          </Button>
+        ))}
+        <Button
+          className="page-item"
+          onClick={nextPage}
+          variant="white"
+          disabled={currentPage === lastIndex}
+        >
+          ▶
+        </Button>
       </div>
     </div>
   );
+
+  function prePage() {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  }
+
+  function changeCPage(id: number) {
+    setCurrentPage(id);
+  }
+
+  function nextPage() {
+    const lastPage = Math.ceil(dummy.words.length / recordsPerPage);
+    if (currentPage < lastPage) {
+      setCurrentPage(currentPage + 1);
+    }
+  }
 };
 
 export default BoardList;
