@@ -1,3 +1,4 @@
+//QNA 글쓰기 화면
 import './Post.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';

@@ -85,21 +85,29 @@ h1 {
   margin: 5px;
 }
 
-li {
-  list-style: none;
-  text-align: auto;
-}
-
-.dropdown-btn {
-  width: 15%;
-  background-color: white;
-  font: bold;
-}
-
 .table-head {
   text-align: center;
 }
 
 .chbox {
+  text-align: center;
+}
+
+.pagination {
+  display: block;
+  text-align: center;
+}
+
+.form-control {
+  width: fit-content;
+  height: fit-content;
+}
+
+.select-form {
+  float: right;
+  margin: 5px;
+}
+
+.pagination-box {
   text-align: center;
 }
